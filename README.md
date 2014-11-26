@@ -2,4 +2,4 @@
 douhack
 =======
 
-Site to organise hackathons for DOU Hack
+Site to organize hackathons for DOU Hack
