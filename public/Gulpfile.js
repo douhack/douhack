@@ -20,7 +20,7 @@ gulp.task('cssMin', function() {
 });
 
 gulp.task('watch', function() {
-	gulp.watch('./sass/*.scss', ['sass']);
+	gulp.watch('./scss/*.scss', ['sass']).on('change', livereload.changed);
 	gulp.watch('./css/*.css', ['cssMin']).on('change', livereload.changed);
 });
 
