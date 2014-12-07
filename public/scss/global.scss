@@ -1,23 +1,49 @@
 $basic-color: rgb(0, 120, 201);
 $high-color: rgb(255, 203, 0);
 
+.clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
 body {
 	font-family: "Roboto Condensed", Arial, sans-serif;
-	background-color: #fafafa;
+	font-weight: 400;
+}
+
+header {
+	position: fixed;
+	width: 100%;
+	background-color: rgba(255,255,255,.4);
 }
 
 .menu {
 	float: right;
 	&__item {
+		font-size: 24px;
 		display: inline-block;
 		text-transform: uppercase;
-		height: 20px;
-		line-height: 20px;
-		padding:0 10px;
+		height: 50px;
+		line-height: 50px;
+		margin: 0 10px;
+		padding:0 16px;
 		background-color: $basic-color;
 		& a {
 			color: white;
 			text-decoration: none;
+			&:hover,
+			&.active {
+				background-color: $high-color;
+				color: black;
+			}
+		}
+		&:hover,
+		&.active {
+				background-color: $high-color;
+				color: black;
 		}
 	}
 }
@@ -33,9 +59,40 @@ body {
 }
 
 .main {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
+	background-color: rgb(255,255,255);
+	box-shadow: inset 0 0 100px 5px #d5dbdb;
+	text-align: center;
+	padding-top: 50px;
+	color: #787878;
+	&__logo {
+		display: inline-block;
+	}
+	&__header {
+		display: inline-block;
+		text-align: center;
+		font-size: 33px;
+		margin: 70px;
+		&__date {
+			font-size: 77px;
+			line-height: 50px;
+		}
+	}
+}
+
+.subscribe {
+	background-color: $basic-color;
+	border: none;
+	color: white;
+	height: 90px;
+	line-height: 90px;
+	padding: 0 35px;
+	margin-top: -25px;
+	margin-bottom: 15px;
+	margin-right: 3%;
+	text-transform: uppercase;
+	font-size: 50px;
+	width: 44%;
+	float: right;
 }
 
 .info {
@@ -47,9 +104,15 @@ body {
 
 .block {
 	background-color: $basic-color;
+	display: flex;
+	align-items: center;
 	color: white;
-	display: inline-block;
 	width: 40%;
+	height: 232px;
+	padding: 30px;
+	font-size: 24px;
+	text-align: center;
+	align-items: center;
 }
 
 .social {
@@ -68,4 +131,6 @@ body {
 	text-align: center;
 	color: $basic-color;
 	text-transform: capitalize;
+	font-weight: 300;
+	font-size: 40px;
 }
