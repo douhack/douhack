@@ -62,16 +62,19 @@ header {
 	background-color: rgb(255,255,255);
 	box-shadow: inset 0 0 100px 5px #d5dbdb;
 	text-align: center;
-	padding-top: 50px;
+	padding: 50px;
 	color: #787878;
+	height: 600px;
+	box-sizing: border-box;
 	&__logo {
-		display: inline-block;
+		float: left;
 	}
 	&__header {
 		display: inline-block;
 		text-align: center;
 		font-size: 33px;
 		margin: 70px;
+		margin-top: 250px;
 		&__date {
 			font-size: 77px;
 			line-height: 50px;
@@ -86,7 +89,7 @@ header {
 	height: 90px;
 	line-height: 90px;
 	padding: 0 35px;
-	margin-top: -25px;
+	margin-top: -70px;
 	margin-bottom: 15px;
 	margin-right: 3%;
 	text-transform: uppercase;
@@ -132,5 +135,5 @@ header {
 	color: $basic-color;
 	text-transform: capitalize;
 	font-weight: 300;
-	font-size: 40px;
+	font-size: 50px;
 }
