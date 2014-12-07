@@ -48,13 +48,33 @@ header {
 	}
 }
 
- @media only screen and (max-width: 350px) {
- 	.menu {
+ @media only screen and (max-width: 820px) {
+ 	/* .menu {
  		display: none;
- 	}
-	.menu__item {
-		display: block;
-		border-bottom: 1px solid white;
+ 		&__item {
+ 				display: block;
+ 				border-bottom: 1px solid white;
+ 			}
+ 		} */
+}
+
+@media only screen and (max-width: 1130px) {
+	.menu {
+		&__item {
+			font-size: 20px;
+			height: 40px;
+			line-height: 40px;
+		}
+	}
+}
+
+@media only screen and (max-width: 930px) {
+	.menu {
+		&__item {
+			font-size: 16px;
+			height: 30px;
+			line-height: 30px;
+		}
 	}
 }
 
@@ -68,16 +88,52 @@ header {
 	box-sizing: border-box;
 	&__logo {
 		float: left;
+		& img {
+			width: 800px;
+		}
 	}
 	&__header {
 		display: inline-block;
 		text-align: center;
 		font-size: 33px;
-		margin: 70px;
+		margin: 0 auto;
 		margin-top: 250px;
 		&__date {
 			font-size: 77px;
 			line-height: 50px;
+		}
+	}
+}
+
+@media screen and (max-width: 1270px) {
+	.main {
+		padding-top: 70px;
+		&__logo img {
+			width: 600px;
+		}
+		&__header{
+			font-size: 24px;
+			margin-top: 186px;
+			&__date{
+				font-size:56px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 980px) {
+	.main {
+		padding-top: 40px;
+		height: 400px;
+		&__logo img {
+			width: 500px;
+		}
+		&__header{
+			font-size: 18px;
+			margin-top: 156px;
+			&__date{
+				font-size:40px;
+			}
 		}
 	}
 }
