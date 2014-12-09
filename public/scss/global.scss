@@ -275,7 +275,6 @@ header {
 	box-sizing: border-box;
 	background-color: $basic-color;
 	text-align: center;
-	color: white;
 	height: 90px;
 	line-height: 90px;
 	padding: 0 35px;
@@ -284,6 +283,10 @@ header {
 	text-transform: uppercase;
 	font-size: 50px;
 	width: 45%;
+	& a{
+		text-decoration: none;
+		color: white;
+	}
 }
 
 @media screen and (max-width: 980px) {
