@@ -38,7 +38,8 @@ header {
   display: none; }
 
 .menu {
-  float: right; }
+  float: right;
+  padding-left: 0; }
   .menu__item {
     display: inline-block; }
     .menu__item a {
@@ -68,10 +69,11 @@ header {
     width: 100%;
     padding-left: 0; }
     .menu__item {
-      margin-left: 0;
-      width: 100%;
-      display: block;
-      border-bottom: 1px solid white; }
+      margin-left: 0; }
+      .menu__item a {
+        width: 100%;
+        display: block;
+        border-bottom: 1px solid white; }
 
   .custom-dropdown label {
     position: relative;
@@ -95,14 +97,14 @@ header {
  }
 
 @media only screen and (max-width: 1130px) {
-  .menu__item {
+  .menu__item a {
     font-size: 20px;
     height: 40px;
     line-height: 40px; }
  }
 
 @media only screen and (max-width: 930px) {
-  .menu__item {
+  .menu__item a {
     font-size: 16px;
     height: 30px;
     line-height: 30px; }
@@ -232,18 +234,16 @@ header {
   .subscribe {
     font-size: 40px;
     line-height: 80px;
-    margin-top: -60px; }
-    .subscribe a {
-      height: 80px; }
+    margin-top: -60px;
+    height: 80px; }
  }
 
 @media screen and (max-width: 820px) {
   .subscribe {
     font-size: 30px;
     line-height: 70px;
-    margin-top: -35px; }
-    .subscribe a {
-      height: 70px; }
+    margin-top: -35px;
+    height: 70px; }
  }
 
 @media screen and (max-width: 670px) {
@@ -251,10 +251,9 @@ header {
     margin: 10px 0;
     font-size: 30px;
     line-height: 70px;
-    margin-top: -35px; }
-    .subscribe a {
-      height: 70px;
-      width: 100%; }
+    margin-top: -35px;
+    height: 70px;
+    width: 100%; }
 
   .section__item {
     display: none; }
@@ -319,6 +318,10 @@ header {
   text-transform: capitalize;
   font-weight: 300;
   font-size: 50px; }
+  .title-second {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 300; }
 
 .footer {
   background-color: #0078c9;

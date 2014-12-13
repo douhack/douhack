@@ -53,6 +53,7 @@ header {
 
 .menu {
 	float: right;
+	padding-left: 0;
 	&__item {
 		display: inline-block;
 		& a {
@@ -90,9 +91,11 @@ header {
  		padding-left: 0;
  		&__item {
  				margin-left: 0;
- 				width: 100%;
- 				display: block;
- 				border-bottom: 1px solid white;
+ 				& a {
+ 					width: 100%;
+ 					display: block;
+ 					border-bottom: 1px solid white;
+ 				}
  			}
  		}
  	.custom-dropdown {
@@ -125,7 +128,7 @@ header {
 
 @media only screen and (max-width: 1130px) {
 	.menu {
-		&__item {
+		&__item a{
 			font-size: 20px;
 			height: 40px;
 			line-height: 40px;
@@ -135,7 +138,7 @@ header {
 
 @media only screen and (max-width: 930px) {
 	.menu {
-		&__item {
+		&__item a{
 			font-size: 16px;
 			height: 30px;
 			line-height: 30px;
@@ -302,9 +305,7 @@ header {
 		font-size: 40px;
 		line-height: 80px;
 		margin-top: -60px;
-		& a {
-			height: 80px;
-		}
+		height: 80px;
 	}
 }
 
@@ -313,9 +314,7 @@ header {
 		font-size: 30px;
 		line-height: 70px;
 		margin-top: -35px;
-		& a {
-			height: 70px;
-		}
+		height: 70px;
 	}
 }
 
@@ -325,10 +324,8 @@ header {
 		font-size: 30px;
 		line-height: 70px;
 		margin-top: -35px;
-		& a {
-			height: 70px;
-			width: 100%;
-		}
+		height: 70px;
+		width: 100%;
 	}
 	.section__item {
 		display: none;
@@ -408,6 +405,11 @@ header {
 	text-transform: capitalize;
 	font-weight: 300;
 	font-size: 50px;
+	&-second {
+		text-align: center;
+		font-size: 32px;
+		font-weight: 300;
+	}
 }
 
 .footer {
