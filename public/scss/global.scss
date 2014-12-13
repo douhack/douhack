@@ -20,6 +20,11 @@ $high-color: rgb(255, 203, 0);
 	}
 }
 
+.no-list {
+	list-style-type: none;
+	padding-left: 0;
+}
+
 body {
 	font-family: "Roboto Condensed", Arial, sans-serif;
 	font-weight: 400;

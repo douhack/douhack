@@ -1,8 +1,16 @@
 .organizers{
-  padding: 0 40;
+  padding: 0 40px;
   &__item {
-    display: inline-block;
-    padding: 10 20;
+    float: left;
+    padding: 10px 10px;
+    width: 30%;
+    text-align: center;
+    & .center {
+      width: 200px;
+      margin: auto;
+      margin-top: -150px;
+      margin-bottom: -75px;
+    }
   }
 }
 
@@ -33,4 +41,8 @@
 
 .Olexandr_Shalakhin {
   background-image: url('../../i/org/Olexandr_Shalakhin.jpg');
+}
+
+.Anna_Kurylo {
+  background-image: url('../../i/org/Anna_Kurylo.jpg');
 }
