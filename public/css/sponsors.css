@@ -1,0 +1,7 @@
+.sponsors__list {
+  display: flex;
+  justify-content: space-around; }
+
+.sponsors__item {
+  height: 100px;
+  width: 100%; }

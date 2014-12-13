@@ -7,7 +7,10 @@
 	font-family: "Roboto Condensed", Arial, sans-serif;
 	font-weight: 400;
 }
-#mc_embed_signup h2 {font-weight:bold; padding:0; margin:15px 0; font-size:1.4em;}
+#mc_embed_signup h2 {
+	padding:0;
+	margin:15px 0;
+}
 #mc_embed_signup input {border:1px solid #999; -webkit-appearance:none;}
 #mc_embed_signup input[type=checkbox]{-webkit-appearance:checkbox;}
 #mc_embed_signup input[type=radio]{-webkit-appearance:radio;}
@@ -50,8 +53,15 @@
 #mc_embed_signup #num-subscribers {font-size:1.1em;}
 #mc_embed_signup #num-subscribers span {padding:.5em; border:1px solid #ccc; margin-right:.5em; font-weight:bold;}
 
+.mc__inputs-third {
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+}
+
 .mc-field-inline {
 	display: inline-block !important;
-	width: 45% !important;
+	width: 30% !important;
 	box-sizing: border-box !important;
 }
+

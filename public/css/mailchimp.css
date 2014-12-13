@@ -8,10 +8,8 @@
   font-weight: 400; }
 
 #mc_embed_signup h2 {
-  font-weight: bold;
   padding: 0;
-  margin: 15px 0;
-  font-size: 1.4em; }
+  margin: 15px 0; }
 
 #mc_embed_signup input {
   border: 1px solid #999;
@@ -192,7 +190,12 @@
   margin-right: 0.5em;
   font-weight: bold; }
 
+.mc__inputs-third {
+  display: flex;
+  justify-content: space-around;
+  width: 100%; }
+
 .mc-field-inline {
   display: inline-block !important;
-  width: 45% !important;
+  width: 30% !important;
   box-sizing: border-box !important; }
