@@ -1,7 +1,7 @@
 .organizers{
-  padding: 0 40px;
+  display: flex;
+  justify-content: space-around;
   &__item {
-    float: left;
     padding: 10px 10px;
     width: 30%;
     text-align: center;
