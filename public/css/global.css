@@ -229,6 +229,9 @@ header {
     color: white; }
     .subscribe a:hover {
       background-color: #0078c9; }
+  .subscribe-full {
+    width: 80%;
+    margin: 0 auto; }
 
 @media screen and (max-width: 980px) {
   .subscribe {
@@ -322,6 +325,12 @@ header {
     text-align: center;
     font-size: 32px;
     font-weight: 300; }
+
+.location {
+  padding: 0 40px; }
+  .location__content {
+    font-weight: 300;
+    font-size: 1.5em; }
 
 .footer {
   background-color: #0078c9;

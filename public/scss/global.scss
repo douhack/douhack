@@ -298,6 +298,10 @@ header {
 			background-color: $basic-color;
 		}
 	}
+	&-full{
+		width: 80%;
+		margin: 0 auto;
+	}
 }
 
 @media screen and (max-width: 980px) {
@@ -409,6 +413,14 @@ header {
 		text-align: center;
 		font-size: 32px;
 		font-weight: 300;
+	}
+}
+
+.location {
+	padding: 0 40px;
+	&__content {
+		font-weight: 300;
+		font-size: 1.5em;
 	}
 }
 
