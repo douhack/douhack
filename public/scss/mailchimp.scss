@@ -1,4 +1,8 @@
 /* MailChimp Form Embed Code - Classic - 08/17/2011 */
+$basic-color: rgb(0, 120, 201);
+$high-color: rgb(255, 203, 0);
+$normal-padding: 40px;
+
 #mc_embed_signup form {
 	display:block;
 	position:relative;
@@ -15,8 +19,14 @@
 #mc_embed_signup input[type=checkbox]{-webkit-appearance:checkbox;}
 #mc_embed_signup input[type=radio]{-webkit-appearance:radio;}
 #mc_embed_signup input:focus {border-color:#333;}
-#mc_embed_signup .button {clear:both; background-color: #aaa; border: 0 none; border-radius:4px; color: #FFFFFF; cursor: pointer; display: inline-block; font-size:15px; font-weight: bold; height: 32px; line-height: 32px; margin: 0 5px 10px 0; padding: 0 22px; text-align: center; text-decoration: none; vertical-align: top; white-space: nowrap; width: auto;}
-#mc_embed_signup .button:hover {background-color:#777;}
+#mc_embed_signup .button {
+	clear:both;
+	background-color: $high-color;
+	border: 0 none;
+	border-radius:4px; color: #FFFFFF; cursor: pointer; display: inline-block; font-size:15px; font-weight: bold; height: 32px; line-height: 32px; margin: 0 5px 10px 0; padding: 0 22px; text-align: center; text-decoration: none; vertical-align: top; white-space: nowrap; width: auto;}
+#mc_embed_signup .button:hover {
+	background-color: $basic-color;
+}
 #mc_embed_signup .small-meta {font-size: 11px;}
 #mc_embed_signup .nowrap {white-space:nowrap;}
 
@@ -53,15 +63,31 @@
 #mc_embed_signup #num-subscribers {font-size:1.1em;}
 #mc_embed_signup #num-subscribers span {padding:.5em; border:1px solid #ccc; margin-right:.5em; font-weight:bold;}
 
-.mc__inputs-third {
-	display: flex;
-	justify-content: space-around;
-	width: 100%;
+.form {
+	&-left {
+		float:left !important;
+		display: inline-block !important;
+		width: 50% !important;
+		box-sizing: border-box !important;
+	}
+	&-right {
+		float:left !important;
+		display: inline-block !important;
+		width: 50% !important;
+		box-sizing: border-box !important;
+	}
 }
 
-.mc-field-inline {
-	display: inline-block !important;
-	width: 30% !important;
-	box-sizing: border-box !important;
+@media screen  and (max-width: 680px) {
+	.form {
+		&-left{
+			float: none !important;
+			width: 100% !important;
+		}
+		&-right {
+			float: none !important;
+			width: 100% !important;
+		}
+	}
 }
 

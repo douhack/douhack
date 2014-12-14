@@ -1,9 +1,11 @@
 .organizers {
+  width: 100%;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-around; }
   .organizers__item {
     padding: 10px 10px;
-    width: 30%;
+    width: 25%;
     text-align: center; }
     .organizers__item .center {
       width: 200px;

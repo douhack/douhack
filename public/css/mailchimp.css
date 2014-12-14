@@ -26,7 +26,7 @@
 
 #mc_embed_signup .button {
   clear: both;
-  background-color: #aaa;
+  background-color: #ffcb00;
   border: 0 none;
   border-radius: 4px;
   color: #FFFFFF;
@@ -45,7 +45,7 @@
   width: auto; }
 
 #mc_embed_signup .button:hover {
-  background-color: #777; }
+  background-color: #0078c9; }
 
 #mc_embed_signup .small-meta {
   font-size: 11px; }
@@ -190,12 +190,22 @@
   margin-right: 0.5em;
   font-weight: bold; }
 
-.mc__inputs-third {
-  display: flex;
-  justify-content: space-around;
-  width: 100%; }
-
-.mc-field-inline {
+.form-left {
+  float: left !important;
   display: inline-block !important;
-  width: 30% !important;
+  width: 50% !important;
   box-sizing: border-box !important; }
+.form-right {
+  float: left !important;
+  display: inline-block !important;
+  width: 50% !important;
+  box-sizing: border-box !important; }
+
+@media screen and (max-width: 680px) {
+  .form-left {
+    float: none !important;
+    width: 100% !important; }
+  .form-right {
+    float: none !important;
+    width: 100% !important; }
+ }

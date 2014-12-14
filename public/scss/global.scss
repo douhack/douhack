@@ -11,6 +11,7 @@
 
 $basic-color: rgb(0, 120, 201);
 $high-color: rgb(255, 203, 0);
+$normal-padding: 40px;
 
 .clearfix {
 	&:after {
@@ -20,6 +21,14 @@ $high-color: rgb(255, 203, 0);
 	}
 }
 
+* {
+	box-sizing: border-box;
+}
+
+.section-padding {
+	padding: 0 $normal-padding;
+}
+
 .no-list {
 	list-style-type: none;
 	padding-left: 0;
@@ -27,7 +36,8 @@ $high-color: rgb(255, 203, 0);
 
 body {
 	font-family: "Roboto Condensed", Arial, sans-serif;
-	font-weight: 400;
+	font-weight: 300;
+	font-size: 18px;
 	-webkit-animation: bugfix infinite 1s;  // for menu on the mobile devices
 }
 
@@ -61,6 +71,7 @@ header {
 	padding-left: 0;
 	&__item {
 		display: inline-block;
+		margin: 0 10px;
 		& a {
 			display: inline-block;
 			font-size: 24px;
@@ -271,12 +282,12 @@ header {
 	}
 }
 
-.section {
+.section-subscribe {
 	width: 100%;
 	display: flex;
 	justify-content: space-around;
 	&__item {
-		width: 45%;
+		width: 40%;
 	}
 }
 
@@ -289,7 +300,7 @@ header {
 	font-size: 50px;
 	line-height: 90px;
 	height: 90px;
-	width: 45%;
+	width: 40%;
 	& a {
 		display: inline-block;
 		box-sizing: border-box;
@@ -305,6 +316,9 @@ header {
 	&-full{
 		width: 80%;
 		margin: 0 auto;
+		font-size: 30px;
+		height: 50px;
+		line-height: 50px;
 	}
 }
 
@@ -409,7 +423,8 @@ header {
 
 .title {
 	text-align: center;
-	color: $basic-color;
+	background-color: $basic-color;
+	color: white;
 	text-transform: capitalize;
 	font-weight: 300;
 	font-size: 50px;
@@ -421,10 +436,20 @@ header {
 }
 
 .location {
-	padding: 0 40px;
 	&__content {
 		font-weight: 300;
-		font-size: 1.5em;
+		font-size: 120%;
+	}
+}
+
+.faq {
+	&__question {
+		font-weight: 700;
+		margin-bottom: 5px;
+		font-size: 120%;
+	}
+	&__answer {
+		margin-bottom: 20px;
 	}
 }
 

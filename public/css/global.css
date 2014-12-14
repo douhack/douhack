@@ -10,13 +10,20 @@
   display: table;
   clear: both; }
 
+* {
+  box-sizing: border-box; }
+
+.section-padding {
+  padding: 0 40px; }
+
 .no-list {
   list-style-type: none;
   padding-left: 0; }
 
 body {
   font-family: "Roboto Condensed", Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 300;
+  font-size: 18px;
   -webkit-animation: bugfix infinite 1s; }
 
 @-webkit-keyframes bugfix {
@@ -45,7 +52,8 @@ header {
   float: right;
   padding-left: 0; }
   .menu__item {
-    display: inline-block; }
+    display: inline-block;
+    margin: 0 10px; }
     .menu__item a {
       display: inline-block;
       font-size: 24px;
@@ -205,12 +213,12 @@ header {
     width: 200px; }
  }
 
-.section {
+.section-subscribe {
   width: 100%;
   display: flex;
   justify-content: space-around; }
-  .section__item {
-    width: 45%; }
+  .section-subscribe__item {
+    width: 40%; }
 
 .subscribe {
   background-color: #ffcb00;
@@ -221,7 +229,7 @@ header {
   font-size: 50px;
   line-height: 90px;
   height: 90px;
-  width: 45%; }
+  width: 40%; }
   .subscribe a {
     display: inline-block;
     box-sizing: border-box;
@@ -234,7 +242,10 @@ header {
       background-color: #0078c9; }
   .subscribe-full {
     width: 80%;
-    margin: 0 auto; }
+    margin: 0 auto;
+    font-size: 30px;
+    height: 50px;
+    line-height: 50px; }
 
 @media screen and (max-width: 980px) {
   .subscribe {
@@ -320,7 +331,8 @@ header {
 
 .title {
   text-align: center;
-  color: #0078c9;
+  background-color: #0078c9;
+  color: white;
   text-transform: capitalize;
   font-weight: 300;
   font-size: 50px; }
@@ -329,11 +341,16 @@ header {
     font-size: 32px;
     font-weight: 300; }
 
-.location {
-  padding: 0 40px; }
-  .location__content {
-    font-weight: 300;
-    font-size: 1.5em; }
+.location__content {
+  font-weight: 300;
+  font-size: 120%; }
+
+.faq__question {
+  font-weight: 700;
+  margin-bottom: 5px;
+  font-size: 120%; }
+.faq__answer {
+  margin-bottom: 20px; }
 
 .footer {
   background-color: #0078c9;
