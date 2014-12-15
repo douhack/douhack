@@ -4,7 +4,7 @@
   position: relative;
   text-align: left;
   padding: 10px 0 10px 3%;
-  font-family: "Roboto Condensed", Arial, sans-serif;
+  font-family: "Roboto Condensed", Arial, sans-serif !important;
   font-weight: 400; }
 
 #mc_embed_signup h2 {
