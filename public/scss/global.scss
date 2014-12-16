@@ -44,14 +44,16 @@ body {
 }
 
 .button {
+	display: block;
 	background-color: $high-color;
 	text-align: center;
-	& a {
-		color: white;
-		height: 100%;
-		width: 100%;
-		text-decoration: none;
-	}
+	color: white;
+	text-decoration: none;
+	width: 80%;
+	margin: 0 auto;
+	font-size: 30px;
+	height: 50px;
+	line-height: 50px;
 	&:hover {
 		background-color: $basic-color;
 	}

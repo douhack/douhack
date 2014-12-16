@@ -34,24 +34,14 @@
     width: 40%; }
 
 .subscribe {
-  margin-top: -70px;
-  margin-bottom: 15px;
+  margin: -70px 0 15px 0;
   text-transform: uppercase;
   font-size: 50px;
   line-height: 90px;
   height: 90px;
-  width: 40%; }
-  .subscribe a {
-    display: inline-block;
-    padding: 0 35px; }
-    .subscribe a:hover {
-      background-color: #0078c9; }
-  .subscribe-full {
-    width: 80%;
-    margin: 0 auto;
-    font-size: 30px;
-    height: 50px;
-    line-height: 50px; }
+  width: 40%;
+  padding: 0 35px;
+  display: inline-block; }
 
 @media screen and (max-width: 980px) {
   .subscribe {
