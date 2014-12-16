@@ -1,6 +1,5 @@
-$basic-color: rgb(0, 120, 201);
-$high-color: rgb(255, 203, 0);
-$normal-padding: 40px;
+@import "fonts";
+@import "variables";
 
 .sponsors {
 	&__list {

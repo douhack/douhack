@@ -26,22 +26,29 @@
   font-weight: 700;
   font-style: normal; }
 
-.sponsors__list {
-  display: flex;
-  justify-content: space-around; }
-.sponsors__item {
-  height: 100px;
-  width: 100%; }
-.sponsors__mailto {
-  display: block;
-  width: 320px;
-  font-size: 20px;
-  height: 30px;
-  line-height: 30px;
+.social {
   text-align: center;
-  margin: 0 auto;
-  background-color: #ffcb00;
-  color: white;
-  text-decoration: none; }
-  .sponsors__mailto:hover {
+  padding-left: 0; }
+  .social__item {
+    font-family: "fontello";
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    font-size: 24px;
+    text-align: center;
+    color: white;
     background-color: #0078c9; }
+    .social__item:before {
+      clear: both; }
+    .social__item-facebook:before {
+      content: "\e801"; }
+    .social__item-twitter:before {
+      content: "\e802"; }
+    .social__item-google:before {
+      content: "\e803"; }
+    .social__item-vk:before {
+      content: "\e800"; }
+    .social__item:hover, .social__item.active {
+      background-color: #ffcb00;
+      color: black; }

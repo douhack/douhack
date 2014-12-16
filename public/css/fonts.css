@@ -25,23 +25,3 @@
   src: url('../../font/rc/RobotoCondensed-Bold.woff') format('woff'), url('../../font/rc/RobotoCondensed-Bold.ttf') format('truetype'), url('../../font/rc/RobotoCondensed-Bold.otf') format('opentype'), url('../../font/rc/RobotoCondensed-Bold.svg') format('svg');
   font-weight: 700;
   font-style: normal; }
-
-.sponsors__list {
-  display: flex;
-  justify-content: space-around; }
-.sponsors__item {
-  height: 100px;
-  width: 100%; }
-.sponsors__mailto {
-  display: block;
-  width: 320px;
-  font-size: 20px;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  margin: 0 auto;
-  background-color: #ffcb00;
-  color: white;
-  text-decoration: none; }
-  .sponsors__mailto:hover {
-    background-color: #0078c9; }
