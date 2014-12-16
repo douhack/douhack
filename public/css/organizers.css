@@ -46,8 +46,7 @@
   height: 400px;
   overflow: hidden;
   visibility: hidden;
-  transform: rotate(120deg);
-  cursor: pointer; }
+  transform: rotate(120deg); }
 
 .hexagon-in1 {
   overflow: hidden;
