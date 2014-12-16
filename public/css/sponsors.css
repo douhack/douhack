@@ -28,7 +28,8 @@
 
 .sponsors__list {
   display: flex;
-  justify-content: space-around; }
+  justify-content: space-around;
+  flex-wrap: wrap; }
 .sponsors__item {
   height: 100px;
   width: 100%; }
