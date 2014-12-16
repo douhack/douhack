@@ -53,11 +53,30 @@ body {
   color: white;
   text-transform: capitalize;
   font-weight: 300;
-  font-size: 50px; }
+  font-size: 50px;
+  padding: 0 10px; }
   .title-second {
     text-align: center;
     font-size: 32px;
     font-weight: 300; }
+
+@media screen and (max-width: 700px) {
+  .title {
+    font-size: 40px; }
+    .title-second {
+      font-size: 24px; }
+ }
+
+@media screen and (max-width: 500px) {
+  .title {
+    font-size: 32px; }
+    .title-second {
+      font-size: 22px; }
+ }
+
+@meda  {
+  .title {
+    font-size: 28px; } }
 
 .button {
   display: block;
@@ -87,6 +106,7 @@ body {
 .contacts {
   text-align: center; }
   .contacts__mail {
+    padding-bottom: 10px;
     color: #0078c9;
     font-size: 30px; }
 
