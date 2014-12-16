@@ -40,16 +40,12 @@
 	}
 }
 
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 680px) {
 	.subscribe {
-		margin: 10px 0;
-		font-size: 30px;
-		line-height: 70px;
-		margin-top: -35px;
-		height: 70px;
-		width: 100%;
+		margin: 0 10px;
+		width: 90%;
 	}
-	.section__item {
+	.section-subscribe__item {
 		display: none;
 	}
 }

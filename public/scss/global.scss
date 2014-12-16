@@ -77,6 +77,14 @@ body {
 	}
 }
 
+.contacts {
+	text-align: center;
+	&__mail {
+		color: $basic-color;
+		font-size:30px;
+	}
+}
+
 .footer {
 	background-color: $basic-color;
 	display: block;

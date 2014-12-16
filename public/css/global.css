@@ -84,6 +84,12 @@ body {
 .faq__answer {
   margin-bottom: 20px; }
 
+.contacts {
+  text-align: center; }
+  .contacts__mail {
+    color: #0078c9;
+    font-size: 30px; }
+
 .footer {
   background-color: #0078c9;
   display: block;

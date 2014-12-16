@@ -100,10 +100,10 @@ header {
       content: "\e804"; }
     .custom-dropdown label:hover {
       color: #ffcb00; }
-  .custom-dropdown input:checked ~ ul {
+  .custom-dropdown input:focus ~ ul {
     margin-top: 45px;
     display: block; }
-    .custom-dropdown input:checked ~ ul > li {
+    .custom-dropdown input:focus ~ ul > li {
       width: 100%; }
  }
 

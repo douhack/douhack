@@ -20,6 +20,12 @@
 	text-align: center;
 }
 
+@media screen and (max-width: 930px) {
+	.block {
+		font-size: 20px;
+	}
+}
+
 @media screen and (max-width: 700px) {
 	.info {
 		flex-direction: column;
@@ -27,5 +33,12 @@
 	.block {
 		margin: 10px;
 		width: 90%;
+		height: 180px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.block{
+		height: 270px;
 	}
 }
