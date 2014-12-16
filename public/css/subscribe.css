@@ -34,8 +34,6 @@
     width: 40%; }
 
 .subscribe {
-  background-color: #ffcb00;
-  text-align: center;
   margin-top: -70px;
   margin-bottom: 15px;
   text-transform: uppercase;
@@ -45,12 +43,7 @@
   width: 40%; }
   .subscribe a {
     display: inline-block;
-    box-sizing: border-box;
-    height: 100%;
-    width: 100%;
-    padding: 0 35px;
-    text-decoration: none;
-    color: white; }
+    padding: 0 35px; }
     .subscribe a:hover {
       background-color: #0078c9; }
   .subscribe-full {

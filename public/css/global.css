@@ -59,6 +59,17 @@ body {
     font-size: 32px;
     font-weight: 300; }
 
+.button {
+  background-color: #ffcb00;
+  text-align: center; }
+  .button a {
+    color: white;
+    height: 100%;
+    width: 100%;
+    text-decoration: none; }
+  .button:hover {
+    background-color: #0078c9; }
+
 .location__content {
   font-weight: 300;
   font-size: 120%; }
