@@ -7,9 +7,11 @@
 	position:relative;
 	text-align:left;
 	padding:10px 0 10px 3%;
-	font-family: "Roboto Condensed", Arial, sans-serif !important;
+	font-family: "Roboto Condensed", Arial, sans-serif;
 	font-weight: 300;
 	font-size: inherit;
+	width: 800px;
+	margin: 0 auto;
 }
 #mc_embed_signup h2 {
 	padding:0;
@@ -32,7 +34,6 @@
 	cursor: pointer;
 	display: inline-block;
 	font-size:20px;
-	font-weight: bold;
 	height: 40px;
 	line-height: 40px;
 	margin: 0 5px 10px 0;

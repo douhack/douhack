@@ -36,7 +36,7 @@
 header {
   position: fixed;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.95);
   z-index: 1000; }
 
 .custom-dropdown input[type=checkbox] {
@@ -112,6 +112,12 @@ header {
     font-size: 20px;
     height: 40px;
     line-height: 40px; }
+ }
+
+@media only screen and (min-width: 1200px) {
+  header {
+    width: 1198px;
+    margin: 0 auto; }
  }
 
 @media only screen and (max-width: 930px) {

@@ -16,6 +16,9 @@
 section {
 	padding-top: 50px !important;
 	margin-bottom: -50px;
+	&.contacts {
+		margin-bottom: 0;
+	}
 }
 
 .section-padding {
@@ -43,7 +46,8 @@ body {
 	body {
 		width: 1200px;
 		margin: 0 auto;
-		border: 1px solid gray;
+		border-left: 1px solid gray;
+		border-right: 1px solid gray;
 	}
 }
 

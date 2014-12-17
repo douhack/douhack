@@ -35,8 +35,10 @@
   box-sizing: border-box; }
 
 section {
-  padding-top: 50px;
+  padding-top: 50px !important;
   margin-bottom: -50px; }
+  section.contacts {
+    margin-bottom: 0; }
 
 .section-padding {
   padding: 0 40px; }
@@ -54,6 +56,14 @@ body {
   font-weight: 300;
   font-size: 18px;
   -webkit-animation: bugfix infinite 1s; }
+
+@media screen and (min-width: 1200px) {
+  body {
+    width: 1200px;
+    margin: 0 auto;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray; }
+ }
 
 .title {
   text-align: center;

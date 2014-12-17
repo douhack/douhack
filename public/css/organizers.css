@@ -31,10 +31,11 @@
   justify-content: space-around;
   flex-wrap: wrap; }
   .organizers__item {
+    display: inline-block;
     padding: 10px 30px;
-    width: 200px;
+    width: 300px;
     text-align: center; }
-    .organizers__item .center {
+    .organizers__item.center {
       width: 200px;
       margin: auto;
       margin-top: -120px;

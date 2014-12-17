@@ -1,15 +1,16 @@
 @import "fonts";
 @import "variables";
 
-.organizers{
+.organizers {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   &__item {
+    display: inline-block;
     padding: 10px 30px;
-    width: 200px;
+    width: 300px;
     text-align: center;
-    & .center {
+    &.center {
       width: 200px;
       margin: auto;
       margin-top: -120px;
