@@ -10,8 +10,6 @@
 	font-family: "Roboto Condensed", Arial, sans-serif;
 	font-weight: 300;
 	font-size: inherit;
-	width: 800px;
-	margin: 0 auto;
 }
 #mc_embed_signup h2 {
 	padding:0;
@@ -97,16 +95,10 @@
 	}
 }
 
-@media screen  and (max-width: 680px) {
-	.form {
-		&-left{
-			float: none !important;
-			width: 100% !important;
-		}
-		&-right {
-			float: none !important;
-			width: 100% !important;
-		}
+@media screen  and (min-width: 800px) {
+	#mc_embed_signup form {
+		width: 800px;
+		margin: 0 auto;
 	}
 }
 
