@@ -2,13 +2,12 @@
 @import "variables";
 
 .organizers{
-  width: 100%;
-  box-sizing: border-box;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   &__item {
-    padding: 10px 10px;
-    width: 25%;
+    padding: 10px 30px;
+    width: 200px;
     text-align: center;
     & .center {
       width: 200px;
