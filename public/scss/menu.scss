@@ -40,6 +40,8 @@ header {
 			line-height: 50px;
 			padding:0 16px;
 			background-color: $basic-color;
+			transition: background-color 0.5s ease;
+			transition: color 0.5s ease;
 			color: white;
 			text-decoration: none;
 			&:hover,

@@ -62,6 +62,8 @@ header {
       line-height: 50px;
       padding: 0 16px;
       background-color: #0078c9;
+      transition: background-color 0.5s ease;
+      transition: color 0.5s ease;
       color: white;
       text-decoration: none; }
       .menu__item a:hover, .menu__item a.active {
