@@ -6,22 +6,16 @@ var gulp = require('gulp'),
   livereload = require('gulp-livereload');
 
 gulp.task('sass', function () {
-    gulp.src('./scss/*.scss')
+    gulp.src('./scss/global.scss')
         .pipe(sass())
-        .pipe(gulp.dest('./css'));
-});
-
-gulp.task('cssMin', function() {
-  gulp.src('./css/*.css')
-    .pipe(autoprefixer())
-    .pipe(minifyCss())
-    .pipe(concat('all.min.css'))
-    .pipe(gulp.dest('./css/min/'));
+        .pipe(autoprefixer())
+        .pipe(minifyCss())
+        .pipe(concat('all.min.css'))
+        .pipe(gulp.dest('./css/min/'));
 });
 
 gulp.task('watch', function() {
 	gulp.watch('./scss/*.scss', ['sass']).on('change', livereload.changed);
-	gulp.watch('./css/*.css', ['cssMin']).on('change', livereload.changed);
 });
 
-gulp.task('default', ['sass','cssMin', 'watch']);
+gulp.task('default', ['sass', 'watch']);
