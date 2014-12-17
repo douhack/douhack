@@ -91,7 +91,7 @@ header {
     			color: $high-color;
     		}
     	}
-		& input:focus ~ ul {
+		& input:checked ~ ul {
 			margin-top: 45px;
       		display: block;
 			> li {

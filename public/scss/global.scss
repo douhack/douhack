@@ -13,6 +13,11 @@
 	box-sizing: border-box;
 }
 
+section {
+	padding-top: 50px;
+	margin-bottom: -50px;
+}
+
 .section-padding {
 	padding: 0 $normal-padding;
 }
@@ -20,6 +25,11 @@
 .no-list {
 	list-style-type: none;
 	padding-left: 0;
+}
+
+.no-margin {
+	margin: 0;
+	padding-top: 0px;
 }
 
 body {
