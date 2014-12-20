@@ -1,3 +1,4 @@
+@import "_normalize";
 @import "fonts";
 @import "variables";
 
@@ -46,8 +47,20 @@ body {
 	body {
 		width: 1200px;
 		margin: 0 auto;
-		border-left: 1px solid gray;
-		border-right: 1px solid gray;
+		border-left: 1px solid rgb(210,210,210);
+		border-right: 1px solid rgb(210,210,210);
+	}
+}
+
+@media screen and (max-width: 600px) {
+	body {
+		font-size: 14px;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	body {
+		font-size: 12px;
 	}
 }
 
@@ -101,8 +114,25 @@ body {
 	font-size: 30px;
 	height: 50px;
 	line-height: 50px;
+	transition: background-color 0.5s ease;
 	&:hover {
 		background-color: $basic-color;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.button {
+		font-size: 24px;
+		height: 40px;
+		line-height: 40px;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	.button {
+		font-size: 18px;
+		height: 30px;
+		line-height: 30px;
 	}
 }
 
