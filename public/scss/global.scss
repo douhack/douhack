@@ -37,6 +37,14 @@ section {
 	padding-top: 0px;
 }
 
+.hiding{
+	opacity:0;
+}
+
+.visible{
+	opacity:1;
+}
+
 body {
 	font-family: "Roboto Condensed", Arial, sans-serif;
 	font-weight: 300;
