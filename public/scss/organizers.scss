@@ -3,42 +3,62 @@
   justify-content: space-around;
   flex-wrap: wrap;
   &__item {
-    display: inline-block;
-    padding: 10px 30px;
     width: 300px;
+    display: flex;
     text-align: center;
-    &.center {
-      width: 200px;
-      margin: auto;
-      margin-top: -120px;
-      margin-bottom: -75px;
+    flex-direction: column;
+    align-items: flex-start;
+    &__form {
+      margin: 0 auto;
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
     }
   }
 }
 
-.hexagon {
-  width: 200px;
-  height: 400px;
-  overflow: hidden;
-  visibility: hidden;
-  transform: rotate(120deg);
+@media screen and (max-width: 930px) {
+  .organizers {
+    &__item {
+        width: 250px;
+      &__form {
+        background-size: 180px 180px;
+        width: 180px;
+        height: 180px;
+      }
+    }
+  }
 }
 
-.hexagon-in1 {
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  transform: rotate(-60deg);
+@media screen and (max-width: 600px) {
+  .organizers {
+    &__item {
+        width: 100%;
+        display: block;
+        text-align: left;
+      &__form {
+        background-size: 150px 150px;
+        width: 150px;
+        height: 150px;
+        float: left;
+        margin: 5px 10px;
+      }
+    }
+  }
 }
 
-.hexagon-in2 {
-  width: 100%;
-  height: 100%;
-  visibility: visible;
-  transform: rotate(-60deg);
-  background-repeat: no-repeat;
-  background-position: 50%;
+@media screen and (max-width: 450px) {
+  .organizers {
+    &__item {
+      &__form {
+        background-size: 100px 100px;
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
 }
+
 
 .Olexandr_Shalakhin {
   background-image: url('../../i/org/Olexandr_Shalakhin.jpg');
