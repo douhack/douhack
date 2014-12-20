@@ -60,7 +60,7 @@
 	}
 }
 
-@media screen and (max-width: 820px) {
+@media screen and (max-width: 840px) {
 	.main {
 		padding-top: 30px;
 		height: 600px;
@@ -99,15 +99,21 @@
 		&__logo img {
 			width: 250px;
 		}
+		&__header {
+			&__date {
+				font-size: 48px;
+			}
+		}
 	}
 }
 
 @media screen and (max-width: 380px) {
 	.main {
+		height: 300px;
 		&__header{
 			font-size: 18px;
 			&__date{
-				font-size:40px;
+				font-size:36px;
 			}
 		}
 	}
@@ -117,6 +123,12 @@
 	.main {
 		&__logo img {
 			width: 200px;
+		}
+		&__header{
+			font-size: 18px;
+			&__date{
+				font-size:32px;
+			}
 		}
 	}
 }
