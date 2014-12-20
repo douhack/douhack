@@ -3,11 +3,17 @@
   to { padding: 0; }
 }
 
-header {
+.main-menu {
 	position: fixed;
 	width: 100%;
-	background-color: rgba(255,255,255,.95);
 	z-index: 1000;
+	&_transparent {
+		background-color: transparent;
+	};
+	&_white {
+		background-color: white;
+		border-bottom: 1px solid rgb(210,210,210);
+	}
 }
 
 .custom-dropdown {
