@@ -1295,6 +1295,39 @@ Copyright (c) 2014 Daniel Eden
           animation-name: fadeInUp;
 }
 
+@-webkit-keyframes fadeInUpMin {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 20%, 0);
+            transform: translate3d(0, 20%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes fadeInUpMin {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 20%, 0);
+            transform: translate3d(0, 20%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+.fadeInUpMin {
+  -webkit-animation-name: fadeInUpMin;
+          animation-name: fadeInUpMin;
+}
+
 @-webkit-keyframes fadeInUpBig {
   0% {
     opacity: 0;
