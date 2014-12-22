@@ -1,5 +1,20 @@
 (function($) {
+
+    $(window).load(function() {
+        if ($(window).width() > 768) {
+            var delay = 0;
+            $(".menu__item").addClass("animated flipInX visible").removeClass("hiding");
+            $(".menu__item").each(function() {
+                $(this).css("animation-delay", delay/4+"s");
+                delay++;
+            });
+        } else {
+            $(".menu__item").addClass("visible").removeClass("hiding");
+        }
+    });
+
     $(document).ready(function() {
+
     	if ($(window).scrollTop() >= 100) {
             $('.main-menu').removeClass('.main-menu_transparent').addClass('.main-menu_white');
         };
@@ -15,6 +30,17 @@
             }
         });
 
+        if ($(window).width() < 768) {
+            $('.animated').removeClass('animated').removeClass('hiding');
+        }
+
+        $(document).on('click', function(event) {
+            if($(".menu").is(":visible")) {
+                if($(event.target).closest(".custom-dropdown").size() <= 0){
+                    $(".custom-dropdown input").prop("checked", false);
+                }
+            }
+        });
 
         $('.menu').on('click', function() {
         	$('#menu-button').prop('checked', false);
@@ -26,21 +52,21 @@
             var animationDelay = element.data('delay');
             if (animationDelay) {
                 setTimeout(function() {
-                    element.addClass(animation + " visible");
+                    element.addClass(animation + ' visible');
                     element.removeClass('hiding');
                     if (element.hasClass('counter')) {
                         element.find('.timer').countTo();
                     }
                 }, animationDelay);
             } else {
-                element.addClass(animation + " visible");
+                element.addClass(animation + ' visible');
                 element.removeClass('hiding');
                 if (element.hasClass('counter')) {
                     element.find('.timer').countTo();
                 }
             }
         }, {
-            accY: -200
+            accY: -150
         });
 
 

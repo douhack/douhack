@@ -12,12 +12,12 @@
 		<input type="checkbox" id="menu-button">
 		<label for="menu-button"></label>
 		<ul class="menu">
-			<li class="menu__item"><a href="#about">Про хакатон</a></li>
-			<li class="menu__item"><a href="#organizers">Організатори</a></li>
-			<li class="menu__item"><a href="#sponsors">Спонсори</a></li>
-			<li class="menu__item"><a href="#location">Локація</a></li>
-			<li class="menu__item"><a href="http://dou.ua/" target="_blank">DOU</a></li>
-			<li class="menu__item"><a href="#contacts">Контакти</a></li>
+			<li class="menu__item hiding"><a href="#about">Про хакатон</a></li>
+			<li class="menu__item hiding"><a href="#organizers">Організатори</a></li>
+			<li class="menu__item hiding"><a href="#sponsors">Спонсори</a></li>
+			<li class="menu__item hiding"><a href="#location">Локація</a></li>
+			<li class="menu__item hiding"><a href="http://dou.ua/" target="_blank">DOU</a></li>
+			<li class="menu__item hiding"><a href="#contacts">Контакти</a></li>
 		</ul>
 	</nav>
 </header>
@@ -42,10 +42,10 @@
 </section>
 <section>
 	<ul class="social">
-		<li class="social__item social__item-facebook"><a href=""></a></li>
-		<li class="social__item social__item-twitter"><a href=""></a></li>
-		<li class="social__item social__item-google"><a href=""></a></li>
-		<li class="social__item social__item-vk"><a href=""></a></li>
+		<li class="social__item social__item-facebook animated hiding" data-animation="rotateIn" data-delay="0"><a href=""></a></li>
+		<li class="social__item social__item-twitter animated hiding" data-animation="rotateIn" data-delay="500"><a href=""></a></li>
+		<li class="social__item social__item-google animated hiding" data-animation="rotateIn" data-delay="1000"><a href=""></a></li>
+		<li class="social__item social__item-vk animated hiding" data-animation="rotateIn" data-delay="1500"><a href=""></a></li>
 	</ul>
 </section>
 <section id="subscribe">
@@ -110,7 +110,7 @@
 	</div>
 </section>
 <section id="organizers">
-	<h2 class="title animated hiding" data-animation="flipInX" data-delay="0">Організатори</h2>
+	<h2 class="title">Організатори</h2>
 	<ul class="no-list organizers">
 		<li class="organizers__item animated hiding" data-animation="fadeInUpMin" data-delay="0">
 			<div class="organizers__item__form Olexandr_Shalakhin"></div>
@@ -119,7 +119,7 @@
 		  		<div class="organizers__item__description">Підприємець. Інженер-програміст. Організатор DOU Hack: Reload.</div>
 			</div>
 		</li>
-		<li class="organizers__item animated hiding" data-animation="fadeInUpMin" data-delay="400">
+		<li class="organizers__item animated hiding" data-animation="fadeInUpMin" data-delay="500">
 	      	<div class='organizers__item__form Anna_Kurylo'></div>
 	      	<div class="organizers__item__text">
 	      		<h3 class="organizers__item__name">Анна Курило</h3>
@@ -133,14 +133,14 @@
 		  		<div class="organizers__item__description">JavaScript програміст, спікер та реверс інженер. D2D програміст. </div>
 		  	</div>
 		</li>
-		<li class="organizers__item animated hiding" data-animation="fadeInUpMin" data-delay="1200">
+		<li class="organizers__item animated hiding" data-animation="fadeInUpMin" data-delay="300">
    			<div class='organizers__item__form Sviatoslav_Sydorenko'></div>
    			<div class="organizers__item__text">
 	  			<h3 class="organizers__item__name">Святослав Сидоренко</h3>
 	  			<div class="organizers__item__description">Веб-розробник. Новатор. Фанат FOSS. Gentooшник. Захоплюється дронами. </div>
 	  		</div>
 		</li>
-		<li class="organizers__item animated hiding" data-animation="fadeInUpMin" data-delay="1500">
+		<li class="organizers__item animated hiding" data-animation="fadeInUpMin" data-delay="700">
    			<div class='organizers__item__form Olena_Sovyn'></div>
    			<div class="organizers__item__text">
 	  			<h3 class="organizers__item__name">Олена Совин</h3>
@@ -153,16 +153,16 @@
 	<h2 class="title">DOU Хакатон став можливим завдяки</h2>
 	<h3 class="title-second">Технічні партнери</h3>
 	<ul class="no-list sponsors__list">
-		<li><a href="https://github.com/" class="sponsors__item"><img src="i/sponsors/logo-GitHub.png" alt="GitHub logo" height="100px"></a></li>
-		<li><a href="https://www.jetbrains.com/" class="sponsors__item"><img src="i/sponsors/logo-jetbrains.png" alt="JetBrains logo" height="100px"></a></li>
+		<li><a href="https://github.com/" class="sponsors__item animated hiding" data-animation="fadeInUpMin" data-delay="0"><img src="i/sponsors/logo-GitHub.png" alt="GitHub logo" height="100px"></a></li>
+		<li><a href="https://www.jetbrains.com/" class="sponsors__item animated hiding" data-animation="fadeInUpMin" data-delay="300"><img src="i/sponsors/logo-jetbrains.png" alt="JetBrains logo" height="100px"></a></li>
 	</ul>
 	<h3 class="title-second">Гостинний партнер</h3>
 	<ul class="no-list sponsors__list">
-		<li><a href="" class="sponsors__item"><img src="i/sponsors/logo-dreamHouse.jpg" alt="" height="100px"></a></li>
+		<li><a href="" class="sponsors__item animated hiding" data-animation="fadeInUpMin" data-delay="0"><img src="i/sponsors/logo-dreamHouse.jpg" alt="" height="100px"></a></li>
 	</ul>
 	<h3 class="title-second">Медіа партнери</h3>
 	<ul class="no-list sponsors__list">
-		<li><a href="http://dou.ua/" class="sponsors__item"><img src="i/sponsors/logo-dou.png" alt="DOU.ua" height="100px"></a></li>
+		<li><a href="http://dou.ua/" class="sponsors__item animated hiding" data-animation="fadeInUpMin" data-delay="0"><img src="i/sponsors/logo-dou.png" alt="DOU.ua" height="100px"></a></li>
 	</ul>
 	<a class="button animated hiding" data-animation="zoomIn" data-delay="0" href="mailto:olexandr@shalakhin.com">Долучитись до партнерів!</a>
 </section>
@@ -178,11 +178,11 @@
 	<h2 class="title">Часті запитання</h2>
 	<dl class="section-padding">
 		<dt class="faq__question">У мене немає команди для створення проекту, чи варто мені приїжджати на DOU Хакатон?</dt>
-		<dd class="faq__answer">Так, варто. На початку події кожен бажаючий зможе представити свою ідею, яку він хоче втілити в життя. Ви зможете знайти однодумців просто під час події. Або ж ви можете втілити свою ідею з меншою функціональністю.</dd>
+		<dd class="faq__answer animated hiding" data-animation="fadeInDown" data-delay="0">Так, варто. На початку події кожен бажаючий зможе представити свою ідею, яку він хоче втілити в життя. Ви зможете знайти однодумців просто під час події. Або ж ви можете втілити свою ідею з меншою функціональністю.</dd>
 		<dt class="faq__question">Ми хочемо приїхати на DOU Хакатон цілою командою, чи слід кожному із учасників зареєструватись, чи достатньо реєстрації капітана команди?</dt>
-		<dd class="faq__answer">Кожному учаснику вашої команди слід зареєструватись. Це дозволить нам забезпечити всіх правильною кількістю їжі, пиття та розеток на події.</dd>
+		<dd class="faq__answer animated hiding" data-animation="fadeInDown" data-delay="500">Кожному учаснику вашої команди слід зареєструватись. Це дозволить нам забезпечити всіх правильною кількістю їжі, пиття та розеток на події.</dd>
 		<dt class="faq__question">Я ще не вирішив чи хочу їхати на DOU Хакатон чи слід мені залишати свій email?</dt>
-		<dd class="faq__answer">Так, це дозволить вам бути в курсі усієї інформації про DOU Хакатон і прийняти правильне рішення - таки приїхати на подію.</dd>
+		<dd class="faq__answer animated hiding" data-animation="fadeInDownt" data-delay="1000">Так, це дозволить вам бути в курсі усієї інформації про DOU Хакатон і прийняти правильне рішення - таки приїхати на подію.</dd>
 	</dl>
 </section>
 <section id="contacts" class="contacts">
