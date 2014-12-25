@@ -2,17 +2,26 @@
 	text-align: center;
 	padding-left: 0;
 	&__item{
-		font-family: "fontello";
 		display: inline-block;
-		height: 40px;
-		width: 40px;
-		line-height: 40px;
-		font-size: 24px;
-		text-align: center;
-		color: white;
-		background-color: $basic-color;
-		&:before{
-			clear:both;
+		& a {
+			display: inline-block;
+			font-family: "fontello";
+			height: 40px;
+			width: 40px;
+			line-height: 40px;
+			font-size: 24px;
+			text-align: center;
+			color: white;
+			background-color: $basic-color;
+			text-decoration: none;
+			&:before{
+				clear:both;
+			}
+			&:hover,
+			&:active {
+				background-color: $high-color;
+				color: black;
+			}
 		}
 		&-facebook:before{
 			content: "\e801";
@@ -25,11 +34,6 @@
 		}
 		&-vk:before{
 			content: "\e800";
-		}
-		&:hover,
-		&.active {
-			background-color: $high-color;
-			color: black;
 		}
 	}
 }
