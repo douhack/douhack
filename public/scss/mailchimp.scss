@@ -19,6 +19,9 @@
 }
 #mc_embed_signup input[type=checkbox]{-webkit-appearance:checkbox;}
 #mc_embed_signup input[type=radio]{-webkit-appearance:radio;}
+#mc_embed_signup input[type=radio] ~ label {
+	padding-left: 10px;
+}
 #mc_embed_signup input:focus {border-color:$basic-color;}
 #mc_embed_signup .button {
 	clear:both;
