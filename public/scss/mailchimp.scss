@@ -33,12 +33,12 @@
 	    width: 16px;
 	    height: 16px;
 	    border-radius: 50%;
-	    border: 1px solid $basic-color;
+	    border: 1px solid black;
 	}
 }
 
 #mc_embed_signup input[type=radio]:checked + label:before {
-    box-shadow: inset 0px 0px 0px 5px white, inset 0px 0px 0px 10px $basic-color;
+    box-shadow: inset 0px 0px 0px 3px white, inset 0px 0px 0px 10px $basic-color;
 }
 
 #mc_embed_signup input:focus {border-color:$basic-color;}
