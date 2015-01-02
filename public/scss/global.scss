@@ -52,6 +52,27 @@ body {
 	-webkit-animation: bugfix infinite 1s;  // for menu on the mobile devices
 }
 
+.button__google-calendar {
+	display: inline-block;
+	background-color: $basic-color;
+	color: white;
+	margin-left: 20px;
+	width: 250px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 20px;
+	height: 40px;
+	line-height: 40px;
+	transition: background-color 0.5s ease;
+	&__text:before {
+		content: "+";
+		padding-right: 10px;
+	}
+	&:hover {
+		background-color: $high-color;
+	}
+}
+
 @media screen and (min-width: 1200px) {
 	body {
 		width: 1200px;
