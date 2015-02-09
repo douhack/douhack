@@ -1,0 +1,3 @@
+#!/bin/sh
+blueberrypy console < db.cleanup
+blueberrypy console < db.test

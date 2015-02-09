@@ -1,0 +1,3 @@
+git+git://github.com/wyuenho/blueberrypy.git
+-e .
+psycopg2==2.5.4
