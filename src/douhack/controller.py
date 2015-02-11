@@ -21,5 +21,5 @@ class Root(object):
 
     @cherrypy.expose
     def index(self):
-        tmpl = get_template("index.html")
+        tmpl = get_template("landing.html")
         return tmpl.render()
