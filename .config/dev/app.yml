@@ -1,0 +1,56 @@
+project_metadata:
+  package: douhack
+global:
+  engine.logging.on: true
+  engine.sqlalchemy.on: true
+controllers:
+  '':
+    controller: !!python/name:douhack.controller.Root
+    /:
+      tools.orm_session.on: true
+      tools.sessions.on: true
+      tools.sessions.persistent: True
+      tools.sessions.timeout: 20160 #2 weeks in minutes
+      tools.staticdir.root: /home/wk/src/douhack/static
+      tools.staticfile.root: /home/wk/src/douhack/static
+    /css:
+      tools.sessions.on: false
+      tools.staticdir.on: true
+      tools.staticdir.dir: css
+    /font:
+      tools.sessions.on: false
+      tools.staticdir.on: true
+      tools.staticdir.dir: font
+    /js:
+      tools.sessions.on: false
+      tools.staticdir.on: true
+      tools.staticdir.dir: js
+    /img:
+      tools.sessions.on: false
+      tools.staticdir.on: true
+      tools.staticdir.dir: img
+    /i:
+      tools.sessions.on: false
+      tools.staticdir.on: true
+      tools.staticdir.dir: i
+  /api:
+    controller: !!python/name:douhack.rest_controller.rest_api
+    /:
+      request.dispatch: !!python/name:douhack.rest_controller.rest_api
+      tools.sessions.on: true
+      tools.sessions.persistent: True
+      tools.sessions.timeout: 20160 #2 weeks in minutes
+      tools.orm_session.on: true
+
+sqlalchemy_engine:
+  url: postgres://douhack@/douhack
+  pool_recycle: 3600
+
+jinja2:
+  loader: !!python/object:jinja2.loaders.FileSystemLoader
+          encoding: utf-8
+          searchpath: [/home/wk/src/douhack/src/douhack/templates]
+  bytecode_cache: !!python/object:jinja2.bccache.FileSystemBytecodeCache {directory: /home/wk/src/douhack/.cache,
+                                                                          pattern: __jinja2_%s.cache}
+  auto_reload: true
+  use_webassets: true
