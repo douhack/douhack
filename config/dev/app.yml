@@ -1,8 +1,10 @@
 project_metadata:
   package: douhack
+
 global:
   engine.logging.on: true
   engine.sqlalchemy.on: true
+
 controllers:
   '':
     controller: !!python/name:douhack.controller.Root
@@ -33,6 +35,10 @@ controllers:
       tools.sessions.on: false
       tools.staticdir.on: true
       tools.staticdir.dir: i
+    /favicon.ico:
+      tools.sessions.on: false
+      tools.staticfile.on: true
+      tools.staticfile.filename: favicon.ico
   /api:
     controller: !!python/name:douhack.rest_controller.rest_api
     /:
