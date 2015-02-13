@@ -47,6 +47,14 @@ controllers:
       tools.sessions.persistent: True
       tools.sessions.timeout: 20160 #2 weeks in minutes
       tools.orm_session.on: true
+  /integrations:
+    controller: !!python/name:douhack.rest_controller.integrations_api
+    /:
+      request.dispatch: !!python/name:douhack.rest_controller.integrations_api
+      tools.sessions.on: true
+      tools.sessions.persistent: True
+      tools.sessions.timeout: 20160 #2 weeks in minutes
+      tools.orm_session.on: true
 
 sqlalchemy_engine:
   url: postgres://douhack@/douhack

@@ -6,7 +6,7 @@ from hashlib import sha256
 
 from sqlalchemy import Column, Integer, UnicodeText, Date, DateTime, String, \
     BigInteger, Enum, SmallInteger, func, text, \
-    ForeignKey, Table
+    Boolean, ForeignKey
 from sqlalchemy.orm import deferred, relationship, backref
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.ext.hybrid import hybrid_property
@@ -39,8 +39,33 @@ class JSONEncodedDict(TypeDecorator):
     def process_result_value(self, value, dialect):
         return json.loads(value) if value is not None else []
 
+__all__ = ['User', 'Event', 'EventParticipant', 'Place', 'Invite']
 
-__all__ = ["User"]
+
+class EventParticipant(Base):
+    """
+    Class represents #douhack event participant.
+    """
+
+    __tablename__ = 'event_participation'
+    __table_args__ = (UniqueConstraint('user_id', 'event_id', name='unique_participation'),
+                     )
+
+
+    def __init__(self, **kwargs):
+        super(EventParticipant, self).__init__(**kwargs)
+
+    id = Column(Integer, autoincrement=True, primary_key=True)
+    user_id = Column(Integer, ForeignKey('participants.id'), nullable=False, index=True)
+    event_id = Column(Integer, ForeignKey('events.id'), nullable=False, index=True)
+
+    register_date = Column(Date)
+    accepted = Column(Boolean, default = None)
+    visited = Column(Boolean, default = None)
+    fields = deferred(Column(JSONEncodedDict(512)))
+
+    users = relationship("User", backref="event_assocs")
+    events = relationship("Event", backref="event_assocs")
 
 
 class User(Base):
@@ -55,8 +80,21 @@ class User(Base):
         super(User, self).__init__(**kwargs)
 
     id = Column(Integer, autoincrement=True, primary_key=True)
-    username = Column(String(20), unique=True, index=True)
-    displayname = Column(String(35), nullable=False)
+    username = Column(String(35), unique=True, index=True)
+
+    email = Column(String(64), unique=True, nullable=False, index=True)
+    name = Column(String(35), nullable=False)
+    surname = Column(String(35), nullable=False)
+
+    food = Column(Enum('meat', 'vegetarian', 'none', name="food"), default=None)
+
+    city = Column(String(30), default=None, index=True)
+
+    sleep_place = Column(Enum('need', 'unneeded', name="sleep_place"), nullable=False)
+    tech = deferred(Column(UnicodeText))
+
+    gender = Column(Enum('male', 'female', name="gender"), nullable=False)
+    t_shirt_size = Column(Enum('S', 'M', 'L', 'XL', 'XXL', name="t_shirt_size"), default=None)
 
     _salt = Column("salt", String(12))
 
@@ -127,3 +165,104 @@ class User(Base):
                                                         b64decode(str(self.salt)))
 
     created = Column(DateTime, default=datetime.utcnow, server_default=text("now()"), nullable=False)
+
+
+class Event(Base):
+    """
+    Class represents #douhack event.
+
+    e.g. DOU Hackathon: Revolution
+    """
+
+    __tablename__ = 'events'
+
+
+    def __init__(self, **kwargs):
+        super(Event, self).__init__(**kwargs)
+
+    id = Column(Integer, autoincrement=True, primary_key=True)
+    url = Column(String(64), nullable=False)
+    title = Column(String(64), nullable=False)
+    desc = deferred(Column(UnicodeText, nullable=False))
+    gplus_event_id = Column(String(27), unique=True, index=True)
+    host_id = Column(Integer, ForeignKey('places.id'), nullable=False, index=True)
+
+    date = Column(Date)
+    closereg = Column(Date)
+    fields = deferred(Column(JSONEncodedDict(512)))
+    # crutch for olostan's code
+    background = Column(String(255), nullable=True)
+    max_regs = Column(Integer, nullable=True, default=None)
+    google_map_iframe = deferred(Column(UnicodeText, nullable=True, default=None))
+
+    participants = relationship("EventParticipant", backref="event")
+    host_org = relationship("Place", backref="events")
+
+
+class Invite(Base):
+    """
+    Class represents an event registration invitation code.
+    """
+
+    __tablename__ = 'invites'
+
+
+    def __init__(self, **kwargs):
+        super(Invite, self).__init__(**kwargs)
+
+    code = Column(String(32), autoincrement=True, primary_key=True)
+    email = Column(String(64), nullable=True, default=None)
+    event_id = Column(Integer, ForeignKey('events.id'), nullable=False)
+    used = Column(Boolean, nullable=False, default=False)
+
+    event = relationship("Event", backref="invites")
+
+
+class Place(Base):
+    """
+    Class represents locations of events.
+
+    e.g. Digital Future
+    """
+
+    __tablename__ = 'places'
+
+
+    def __init__(self, **kwargs):
+        super(Place, self).__init__(**kwargs)
+
+    id = Column(Integer, autoincrement=True, primary_key=True)
+
+    city = Column(String(20), nullable=False, default='')
+    name = Column(String(20), nullable=True, default=None)
+    url = Column(String(50), nullable=False, default='')
+    geo = Column(String(30), nullable=False, default='')
+    logo = Column(String(255), nullable=True, default=None)
+
+    show = Column(Boolean, nullable=False, default=False)
+
+
+class DouHackRevolutionMailChimp(Base):
+    """
+    Class represents MailChimp subscription.
+    """
+
+    __tablename__ = 'douhack_revolution_mailchimp'
+
+
+    def __init__(self, **kwargs):
+        super(DouHackRevolutionMailChimp, self).__init__(**kwargs)
+
+    # EMAIL|FNAME|LNAME|FOOD|CITY|SLEEPLACE|TECH
+    id = Column(Integer, autoincrement=True, primary_key=True)
+    email = Column(String(64), unique=True, nullable=False, index=True)
+    fname = Column(String(35), nullable=False)
+    lname = Column(String(35), nullable=False)
+    food = Column(Enum('meat', 'vegetarian', 'none', name="food"), default=None)
+    city = Column(String(30), default=None, index=True)
+    sleep_place = Column(Enum('need', 'unneeded', name="sleep_place"), nullable=False)
+    tech = deferred(Column(UnicodeText))
+
+    ###
+    #gender = Column(Enum('male', 'female', name="gender"), default=None)
+    #t_shirt_size = Column(Enum('S', 'M', 'L', 'XL', 'XXL', name="t_shirt_size"), default=None)

@@ -52,6 +52,17 @@ controllers:
       tools.orm_session.on: true
       error_page.default: !!python/name:douhack.rest_controller.generic_error_handler
       request.error_response: !!python/name:douhack.rest_controller.unexpected_error_handler
+  /integrations:
+    controller: !!python/name:douhack.rest_controller.integrations_api
+    /:
+      request.dispatch: !!python/name:douhack.rest_controller.integrations_api
+      tools.proxy.on: true
+      tools.sessions.on: true
+      tools.sessions.persistent: True
+      tools.sessions.timeout: 20160 #2 weeks in minutes
+      tools.orm_session.on: true
+      error_page.default: !!python/name:douhack.rest_controller.generic_error_handler
+      request.error_response: !!python/name:douhack.rest_controller.unexpected_error_handler
 
 sqlalchemy_engine:
   url: postgres://douhack@/douhack

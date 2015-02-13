@@ -120,6 +120,10 @@ class UserController(REST_API_Base):
         raise HTTPError(404)
 
 
+class Integrations(REST_API_Base):
+    pass
+
+
 # RESTful-like bindings
 rest_api = cherrypy.dispatch.RoutesDispatcher()
 rest_api.mapper.explicit = False
@@ -141,11 +145,16 @@ rest_api.connect("user_login", "/auth/", AuthController,
 rest_api.connect("user_logout", "/auth/", AuthController,
                         action="logout", conditions={"method":["DELETE"]})
 
+integrations_api = cherrypy.dispatch.RoutesDispatcher()
+integrations_api.mapper.explicit = False
+integrations_api.connect("add_participant", "/participants", Integrations,
+                        action="create", conditions={"method":["POST"]})
+
 # Error handlers
 
 def generic_error_handler(status, message, traceback, version):
     """error_page.default"""
-    
+
     response = cherrypy.response
     response.headers['Content-Type'] = "application/json"
     response.headers.pop('Content-Length', None)
