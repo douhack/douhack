@@ -18,6 +18,13 @@ from douhack.model import User
 import functools
 import sqlalchemy
 
+from datetime import date, datetime
+
+import logging
+
+
+logger = logging.getLogger(__name__)
+
 def auth(func):
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
@@ -121,7 +128,19 @@ class UserController(REST_API_Base):
 
 
 class Integrations(REST_API_Base):
-    pass
+
+    #@cherrypy.tools.json_out()
+    def create(self, **kwargs):
+        logger.debug('Integration query')
+        #return 'creating someone'
+        req = cherrypy.request
+        orm_session = req.orm_session
+        #u = req.json['user']
+        logger.debug(req)
+        #user = from_collection(u, User())
+        #orm_session.merge(user)
+        #orm_session.commit()
+        return 'OK' #to_collection(user, sort_keys=True)
 
 
 # RESTful-like bindings
