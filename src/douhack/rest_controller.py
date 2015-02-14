@@ -181,6 +181,9 @@ class Integrations(object):
             logger.debug(kwargs)
             raise HTTPError(403, 'Invalid secret.')
 
+        if cherrypy.request.method != 'POST':
+            return {'status':'ok'}
+
         logger.debug('Integration query')
 
         parsed_params = parse_mailchimp_params(kwargs)
