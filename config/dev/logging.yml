@@ -6,11 +6,11 @@ loggers:
     handlers: [rfile]
   douhack:
     level: DEBUG
-    handlers: [rfile]
+    handlers: [rfile, stdout]
     propagate: false
   # The following SQLAlchemy loggers are used for development only to let you
   # understanding what's actually going on inside SQLAlchemy. You can safely
-  # remove them as you wish. 
+  # remove them as you wish.
   sqlalchemy:
     level: WARNING
     handlers: [sa]

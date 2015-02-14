@@ -13,17 +13,21 @@ from cherrypy.lib import httputil as cphttputil
 from blueberrypy.util import from_collection, to_collection
 
 from douhack import api
-from douhack.model import User
+from douhack.model import User, MailChimpEvents
 
 import functools
 import sqlalchemy
 
 from datetime import date, datetime
 
+import re
+mailchimp_split = re.compile(r'[\w\-]+|\\[\w+\\]')
+
 import logging
 
 
 logger = logging.getLogger(__name__)
+
 
 def auth(func):
     @functools.wraps(func)
@@ -35,6 +39,43 @@ def auth(func):
             raise cherrypy.HTTPError(401)
         return func(*args, **kwargs)
     return wrapper
+
+
+def parse_mailchimp_params(params):
+    '''parse_mailchimp_params
+
+    Function for conversion of MailChimp webhook POST parameters
+    into python dictionary
+    '''
+
+    def build_nested_dict(key_chain, val):
+        obj = {key_chain.pop(): param}
+        key_chain.reverse()
+        for k in key_chain:
+            obj = {k:obj}
+        return obj
+
+    def merge(orig_dict, merge_dict):
+        for k, v in merge_dict.items():
+            if k not in orig_dict:
+                orig_dict[k] = v
+            else:
+                if isinstance(orig_dict[k], dict):
+                    if isinstance(v, dict):
+                        orig_dict[k] = merge(orig_dict[k], v)
+                    else:
+                        orig_dict[k] = v
+                elif isinstance(orig_dict[k], list):
+                    orig_dict[k].append(v)
+        return orig_dict
+
+    parsed_params = {}
+    for key, param in params.items():
+        key_chain = mailchimp_split.findall(key)
+        parsed_params = merge(parsed_params, build_nested_dict(key_chain, param))
+
+    return parsed_params
+
 
 class REST_API_Base:
     _cp_config = {"tools.json_in.on": True}
@@ -127,20 +168,29 @@ class UserController(REST_API_Base):
         raise HTTPError(404)
 
 
-class Integrations(REST_API_Base):
+class Integrations(object):
 
-    #@cherrypy.tools.json_out()
-    def create(self, **kwargs):
-        logger.debug('Integration query')
-        #return 'creating someone'
+    secret_key = ''
+
+    def create(self, secret_key):
         req = cherrypy.request
         orm_session = req.orm_session
-        #u = req.json['user']
-        logger.debug(req)
-        #user = from_collection(u, User())
-        #orm_session.merge(user)
-        #orm_session.commit()
-        return 'OK' #to_collection(user, sort_keys=True)
+
+        if secret_key != self.secret_key:
+            logger.debug('Invalid secret.')
+            logger.debug(req)
+            raise HTTPError(403, 'Invalid secret.')
+
+        logger.debug('Integration query')
+
+        parsed_params = parse_mailchimp_params(req.params)
+        logger.debug(parsed_params)
+
+        mc_event = from_collection(parsed_params, MailChimpEvents)
+        orm_session.merge(mc_event)
+        orm_session.commit()
+
+        return to_collection(mc_event, sort_keys=True)
 
 
 # RESTful-like bindings
@@ -166,8 +216,8 @@ rest_api.connect("user_logout", "/auth/", AuthController,
 
 integrations_api = cherrypy.dispatch.RoutesDispatcher()
 integrations_api.mapper.explicit = False
-integrations_api.connect("add_participant", "/participants", Integrations,
-                        action="create", conditions={"method":["POST"]})
+integrations_api.connect("add_participant", "/mailchimp", Integrations,
+                        action="create", conditions={"method":["POST", "GET"]})
 
 # Error handlers
 

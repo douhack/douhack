@@ -39,7 +39,7 @@ class JSONEncodedDict(TypeDecorator):
     def process_result_value(self, value, dialect):
         return json.loads(value) if value is not None else []
 
-__all__ = ['User', 'Event', 'EventParticipant', 'Place', 'Invite']
+__all__ = ['User', 'Event', 'EventParticipant', 'Place', 'Invite', 'MailChimpEvents']
 
 
 class EventParticipant(Base):
@@ -242,6 +242,15 @@ class Place(Base):
     show = Column(Boolean, nullable=False, default=False)
 
 
+class MailChimpEvents(Base):
+    __tablename__ = 'mailchimp_events'
+
+    id = Column(Integer, autoincrement=True, primary_key=True)
+    type = Column(String(11), nullable=False, default='')
+    fired_at = Column(DateTime)
+    data = deferred(Column(JSONEncodedDict(512)))
+
+
 class DouHackRevolutionMailChimp(Base):
     """
     Class represents MailChimp subscription.
@@ -262,7 +271,6 @@ class DouHackRevolutionMailChimp(Base):
     city = Column(String(30), default=None, index=True)
     sleep_place = Column(Enum('need', 'unneeded', name="sleep_place"), nullable=False)
     tech = deferred(Column(UnicodeText))
-
     ###
     #gender = Column(Enum('male', 'female', name="gender"), default=None)
     #t_shirt_size = Column(Enum('S', 'M', 'L', 'XL', 'XXL', name="t_shirt_size"), default=None)
