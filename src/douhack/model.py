@@ -278,5 +278,5 @@ class DouHackRevolutionMailChimp(Base):
     sleep_place = Column(Enum('need', 'unneeded', name="sleep_place"), nullable=False)
     tech = deferred(Column(UnicodeText))
     ###
-    #gender = Column(Enum('male', 'female', name="gender"), default=None)
-    #t_shirt_size = Column(Enum('S', 'M', 'L', 'XL', 'XXL', name="t_shirt_size"), default=None)
+    gender = Column(Enum('male', 'female', name="gender"), default=None)
+    t_shirt_size = Column(Enum('S', 'M', 'L', 'XL', 'XXL', name="t_shirt_size"), default=None)
