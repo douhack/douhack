@@ -1,5 +1,5 @@
-hg+https://bitbucket.org/wyuenho/blueberrypy#egg=speedups
-#git+git://github.com/wyuenho/blueberrypy.git
+#hg+https://bitbucket.org/wyuenho/blueberrypy#egg=speedups
+git+git://github.com/wyuenho/blueberrypy.git
 -e .
 psycopg2==2.5.4
 mailsnake==1.6.2
