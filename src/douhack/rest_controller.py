@@ -170,27 +170,30 @@ class UserController(REST_API_Base):
 
 class Integrations(object):
 
-    secret_key = ''
+    secret_key = 'a27c28e1a8404021800463e5a838094b'
 
-    def create(self, secret_key):
-        req = cherrypy.request
-        orm_session = req.orm_session
+    @cherrypy.tools.json_out()
+    def create(self, secret_key, **kwargs):
+        orm_session = cherrypy.request.orm_session
 
         if secret_key != self.secret_key:
             logger.debug('Invalid secret.')
-            logger.debug(req)
+            logger.debug(kwargs)
             raise HTTPError(403, 'Invalid secret.')
 
         logger.debug('Integration query')
 
-        parsed_params = parse_mailchimp_params(req.params)
+        parsed_params = parse_mailchimp_params(kwargs)
         logger.debug(parsed_params)
+        logger.debug(parsed_params['data'])
 
-        mc_event = from_collection(parsed_params, MailChimpEvents)
+        #mc_event = from_collection(parsed_params, MailChimpEvents())
+        mc_event = MailChimpEvents(**parsed_params)
+        logger.debug(mc_event.data)
         orm_session.merge(mc_event)
         orm_session.commit()
 
-        return to_collection(mc_event, sort_keys=True)
+        return to_collection(mc_event, sort_keys=True, excludes=('id',))
 
 
 # RESTful-like bindings
@@ -216,7 +219,7 @@ rest_api.connect("user_logout", "/auth/", AuthController,
 
 integrations_api = cherrypy.dispatch.RoutesDispatcher()
 integrations_api.mapper.explicit = False
-integrations_api.connect("add_participant", "/mailchimp", Integrations,
+integrations_api.connect("add_participant", "/mailchimp/:secret_key", Integrations,
                         action="create", conditions={"method":["POST", "GET"]})
 
 # Error handlers

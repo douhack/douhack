@@ -19,6 +19,11 @@ metadata = Base.metadata
 from sqlalchemy.types import TypeDecorator, VARCHAR
 import json
 
+import logging
+
+
+logger = logging.getLogger(__name__)
+
 class JSONEncodedDict(TypeDecorator):
     """Represents an immutable structure as a json-encoded string.
 
@@ -31,6 +36,7 @@ class JSONEncodedDict(TypeDecorator):
     impl = VARCHAR
 
     def process_bind_param(self, value, dialect):
+        logger.debug(value)
         if value is not None:
             value = json.dumps(value)
 
@@ -56,7 +62,7 @@ class EventParticipant(Base):
         super(EventParticipant, self).__init__(**kwargs)
 
     id = Column(Integer, autoincrement=True, primary_key=True)
-    user_id = Column(Integer, ForeignKey('participants.id'), nullable=False, index=True)
+    user_id = Column(Integer, ForeignKey('users.id'), nullable=False, index=True)
     event_id = Column(Integer, ForeignKey('events.id'), nullable=False, index=True)
 
     register_date = Column(Date)
