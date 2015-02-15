@@ -271,11 +271,11 @@ class DouHackRevolutionMailChimp(Base):
     # EMAIL|FNAME|LNAME|FOOD|CITY|SLEEPLACE|TECH
     id = Column(Integer, autoincrement=True, primary_key=True)
     email = Column(String(64), unique=True, nullable=False, index=True)
-    fname = Column(String(35), nullable=False)
-    lname = Column(String(35), nullable=False)
+    fname = Column(String(35), nullable=True)
+    lname = Column(String(35), nullable=True)
     food = Column(Enum('meat', 'vegetarian', 'none', name="food"), default=None)
-    city = Column(String(30), default=None, index=True)
-    sleep_place = Column(Enum('need', 'unneeded', name="sleep_place"), nullable=False)
+    city = Column(String(40), default=None, index=True)
+    sleep_place = Column(Enum('need', 'unneeded', name="sleep_place"), default=None)
     tech = deferred(Column(UnicodeText))
     ###
     gender = Column(Enum('male', 'female', name="gender"), default=None)

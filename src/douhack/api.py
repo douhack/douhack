@@ -1,6 +1,6 @@
 import logging
 
-from douhack.model import User
+from douhack.model import User, DouHackRevolutionMailChimp
 
 
 logger = logging.getLogger(__name__)
@@ -26,3 +26,7 @@ def delete_user_by_id(session, id):
 
 def get_all_users(session):
     return session.query(User).all()
+
+def find_subscriber_by_email(session, email):
+    return session.query(DouHackRevolutionMailChimp)\
+                .filter(DouHackRevolutionMailChimp.email == email).first()
