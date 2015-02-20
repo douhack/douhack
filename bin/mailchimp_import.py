@@ -1,5 +1,7 @@
 #! /usr/bin/env python3
 
+import os
+
 import mailchimp
 
 from sqlalchemy.orm import scoped_session, sessionmaker
@@ -23,7 +25,7 @@ with open(config_file_path) as app_yml:
 Session = scoped_session(sessionmaker())
 Session.configure(bind=engine_from_config(_app_config['sqlalchemy_engine'], ''))
 
-api_key = '0a8ed75a0737f24683805373f6cf5a6e-us9'
+api_key = os.getenv('MAILCHIMP_API_KEY', _app_config.get('mailchimp_api_key'))
 list_id = '3ebfbfd47d'
 result_limit = 100
 
