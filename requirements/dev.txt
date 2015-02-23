@@ -1,0 +1,8 @@
+-r _base.txt
+ipython
+ipdb
+django-debug-toolbar
+werkzeug
+django-extensions
+django_nose
+coverage
